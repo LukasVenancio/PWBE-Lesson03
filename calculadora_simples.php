@@ -19,19 +19,23 @@ if(isset($_POST['btncalc']))
 			echo('<p class="msgErro">Insira apenas números!</p>');
 		}else
 		{
-			if(strchr($rdoOperacao, 'somar'))
-			{
-				$result = $valor1 + $valor2;
-
-			}else if (strchr($rdoOperacao, 'subtrair'))
-			{
-				$result = $valor1 - $valor2;
-			}else if (strchr($rdoOperacao, 'multiplicar'))
-			{
-				$result = $valor1 * $valor2;
-			}else
-			{
-				$result = $valor1 / $valor2;
+			switch($rdoOperacao){
+				
+				case 'somar':
+					$result = $valor1 + $valor2;
+					break;
+				
+				case 'subtrair':
+					$result = $valor1 - $valor2;
+					break;
+				
+				case 'multiplicar':
+					$result = $valor1 * $valor2;
+					break;
+					
+				case 'dividir':
+					$result = $valor1 / $valor2;
+					break;	
 			}
 		}
 	}
